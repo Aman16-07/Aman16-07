@@ -6,6 +6,9 @@
 </picture>
 
 <br/>
+# about
+<p>I’m a Computer Science student passionate about building, designing, and solving real-world problems. I work at the intersection of software development and creative thinking, turning ideas into practical and scalable solutions. With a strong foundation in modern technologies, I adapt quickly to new tools and trends. Currently, I’m the CEO at Aexiz Solutions, where we focus on building technology-driven products, innovative digital solutions, and continuously growing as a team in this fast-evolving tech landscape.</p>
+<br>
 
 # 💻 Tech Stack I Worked With
 
