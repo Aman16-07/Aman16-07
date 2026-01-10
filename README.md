@@ -112,6 +112,15 @@
 
 [![](https://visitcount.itsvg.in/api?id=antxnrx&icon=0&color=0)](https://visitcount.itsvg.in)
 
+<!-- ================= CONTRIBUTIONS SVG ================= -->
+<picture>
+  <source srcset="svg/contributions%20dark.svg" media="(prefers-color-scheme: dark)">
+  <source srcset="svg/contributions%20white.svg" media="(prefers-color-scheme: light)">
+  <img src="svg/contributions%20white.svg" alt="GitHub Contributions" width="100%" />
+</picture>
+
+<br/>
+
 <h2 align="center">Contacts</h2>
 
 <p align="center">
