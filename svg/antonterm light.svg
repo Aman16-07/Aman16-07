@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="510px" font-size="16px">
+<style>
+@font-face {
+src: local('Consolas'), local('Consolas Bold');
+font-family: 'ConsolasFallback';
+font-display: swap;
+-webkit-size-adjust: 109%;
+size-adjust: 109%;
+}
+.key {fill: #e36209;}
+.value {fill: #0969da;}
+.cc {fill: #6e7781;}
+text, tspan {white-space: pre;}
+</style>
+<rect width="985px" height="510px" fill="#ffffff" rx="15"/>
+<text x="15" y="30" fill="#24292f" class="ascii">
+<tspan x="15" y="50">                                </tspan>
+<tspan x="15" y="70">                                </tspan>
+<tspan x="15" y="90">             ++**######         </tspan>
+<tspan x="15" y="110">           ****+###*#+++--      </tspan>
+<tspan x="15" y="130">          ++#*++*#=.::*++:-=    </tspan>
+<tspan x="15" y="150">         -*+**-=-:.-:-+=:::++=  </tspan>
+<tspan x="15" y="170">        **##**+----=--=:-=+=+*  </tspan>
+<tspan x="15" y="190">        *####+*++**+==--=+=+*+  </tspan>
+<tspan x="15" y="210">         ###+=++++-:::==--+:=*  </tspan>
+<tspan x="15" y="230">          +#. .:::.      ...    </tspan>
+<tspan x="15" y="250">          -+.. ...:-....  .:    </tspan>
+<tspan x="15" y="270">          .:....  .:.  ....     </tspan>
+<tspan x="15" y="290">            ....:-:...:...:     </tspan>
+<tspan x="15" y="310">            ::::..:::.....      </tspan>
+<tspan x="15" y="330">             -==-...  ..-=      </tspan>
+<tspan x="15" y="350">          *=--=+**+====-:       </tspan>
+<tspan x="15" y="370">     ++**##*----===----:=*+     </tspan>
+<tspan x="15" y="390"> ++*****##%%*---::::::::.+*+++  </tspan>
+<tspan x="15" y="410">***********#%%+--::::::.:******+</tspan>
+<tspan x="15" y="430">*************#%%#+==--:+*****+**</tspan>
+<tspan x="15" y="450">**************#%%%%%%###********</tspan>
+</text>
+<text x="340" y="30" fill="#24292f">
+<tspan x="340" y="30">- About</tspan> -———————————————————————————————————————————————————————————
+<tspan x="340" y="60" class="cc">. </tspan><tspan class="key">Name</tspan>:<tspan class="cc"> ................................................. </tspan><tspan class="value" x="950" text-anchor="end">Anton</tspan>
+<tspan x="340" y="85" class="cc">. </tspan><tspan class="key">From</tspan>:<tspan class="cc"> ................................................. </tspan><tspan class="value" x="950" text-anchor="end">India</tspan>
+<tspan x="340" y="110" class="cc">. </tspan><tspan class="key">Current</tspan>.<tspan class="key">position</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value" x="950" text-anchor="end">CEO at Aexiz solutions</tspan>
+<tspan x="340" y="135" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value" x="950" text-anchor="end">20 years, 12 months, 30 days</tspan>
+<tspan x="340" y="160" class="cc">. </tspan>
+<tspan x="340" y="185" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value" x="950" text-anchor="end">Java, Python, JavaScript, C++</tspan>
+<tspan x="340" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value" x="950" text-anchor="end">HTML, CSS, JSON, YAML</tspan>
+<tspan x="340" y="235" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value" x="950" text-anchor="end">English, Hindi</tspan>
+<tspan x="340" y="260" class="cc">. </tspan>
+<tspan x="340" y="285" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value" x="950" text-anchor="end">web dev, content</tspan>
+<tspan x="340" y="310" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Hardware</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value" x="950" text-anchor="end">breaking opening things</tspan>
+<tspan x="340" y="355">- Contact</tspan> -——————————————————————————————————————————————————————————
+<tspan x="340" y="380" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Personal</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value" x="950" text-anchor="end">antonraj0001@gmail.com</tspan>
+<tspan x="340" y="405" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Work</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value" x="950" text-anchor="end">antonraj.singh@aexiz.com</tspan>
+<tspan x="340" y="430" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ................................... </tspan><tspan class="value" x="950" text-anchor="end">Anton Raj Singh</tspan>
+<tspan x="340" y="455" class="cc">. </tspan><tspan class="key">Instagram</tspan>:<tspan class="cc"> ........................................ </tspan><tspan class="value" x="950" text-anchor="end">Antxnrxj</tspan>
+<tspan x="340" y="480" class="cc">. </tspan><tspan class="key">Discord</tspan>:<tspan class="cc"> .......................................... </tspan><tspan class="value" x="950" text-anchor="end">Taki_0001</tspan>
+</text>
+</svg>

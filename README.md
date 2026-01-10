@@ -1,8 +1,8 @@
-<!-- ================= HERO IMAGE ================= -->
+<!-- ================= HERO SVG ================= -->
 <picture>
-  <source srcset="photos/Picsart_25-12-30_23-29-09-908.jpg" media="(prefers-color-scheme: dark)">
-  <source srcset="photos/Picsart_25-12-30_23-26-56-222.jpg" media="(prefers-color-scheme: light)">
-  <img src="photos/Picsart_25-12-30_23-26-56-222.jpg" alt="Anton" width="100%" />
+  <source srcset="svg/antonterm%20dark.svg" media="(prefers-color-scheme: dark)">
+  <source srcset="svg/antonterm%20light.svg" media="(prefers-color-scheme: light)">
+  <img src="svg/antonterm%20light.svg" alt="Anton" width="100%" />
 </picture>
 
 <br/>
@@ -13,7 +13,7 @@
 
 <br/>
 
-# Tech Stack I Worked With
+# Tech Stack I Work With
 
 <details open>
 <summary><strong>Programming & Core Languages</strong></summary>
