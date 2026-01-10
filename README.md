@@ -114,9 +114,9 @@
 
 <!-- ================= CONTRIBUTIONS SVG ================= -->
 <picture>
-  <source srcset="svg/contributions-dark.svg" media="(prefers-color-scheme: dark)">
-  <source srcset="svg/contributions-light.svg" media="(prefers-color-scheme: light)">
-  <img src="svg/contributions-light.svg" alt="GitHub Contributions" width="100%" />
+  <source srcset="https://raw.githubusercontent.com/Antxnrx/Antxnrx/main/svg/contributions-dark.svg" media="(prefers-color-scheme: dark)">
+  <source srcset="https://raw.githubusercontent.com/Antxnrx/Antxnrx/main/svg/contributions-light.svg" media="(prefers-color-scheme: light)">
+  <img src="https://raw.githubusercontent.com/Antxnrx/Antxnrx/main/svg/contributions-light.svg" alt="GitHub Contributions" width="100%" />
 </picture>
 
 <br/>
