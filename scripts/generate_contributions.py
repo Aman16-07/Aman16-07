@@ -14,7 +14,7 @@ GITHUB_USERNAME = os.environ.get('GITHUB_USERNAME', 'Antxnrx')
 def fetch_contributions():
     """Fetch contribution data from GitHub's GraphQL API via the contribution calendar."""
     # Use GitHub's contribution calendar endpoint
-    url = f"https://github.com/users/{GITHUB_USERNAME}/contributions"
+    url = f"https://github.com/users/Antxnrx/contributions"
     
     try:
         response = requests.get(url)
