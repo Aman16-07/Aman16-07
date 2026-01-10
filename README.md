@@ -114,9 +114,9 @@
 
 <!-- ================= CONTRIBUTIONS SVG ================= -->
 <picture>
-  <source srcset="svg/contributions%20dark.svg" media="(prefers-color-scheme: dark)">
-  <source srcset="svg/contributions%20white.svg" media="(prefers-color-scheme: light)">
-  <img src="svg/contributions%20white.svg" alt="GitHub Contributions" width="100%" />
+  <source srcset="svg/contributions-dark.svg" media="(prefers-color-scheme: dark)">
+  <source srcset="svg/contributions-light.svg" media="(prefers-color-scheme: light)">
+  <img src="svg/contributions-light.svg" alt="GitHub Contributions" width="100%" />
 </picture>
 
 <br/>
