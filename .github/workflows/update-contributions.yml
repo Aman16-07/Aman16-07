@@ -31,11 +31,11 @@ jobs:
         env:
           GITHUB_USERNAME: Antxnrx
         run: python scripts/generate_contributions.py
-      
+
       - name: Commit and push changes
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "antonraj0001@gmail.com"
+          git config --local user.name "Antxnrx"
           git add svg/contributions-*.svg
-          git diff --staged --quiet || git commit -m "📊 Update contributions chart [skip ci]"
+          git commit -m "updated contributions chart"
           git push
