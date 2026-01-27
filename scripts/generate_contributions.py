@@ -10,23 +10,39 @@ import requests
 from datetime import datetime, timedelta
 
 GITHUB_USERNAME = os.environ.get('GITHUB_USERNAME', 'Antxnrx')
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 def fetch_contributions():
     """Fetch contribution data from GitHub's GraphQL API via the contribution calendar."""
-    # Use GitHub's contribution calendar endpoint
-    url = f"https://github.com/users/Antxnrx/contributions"
-    
+    # Try fetching the contribution calendar HTML first (no auth required)
+    url = f"https://github.com/users/{GITHUB_USERNAME}/contributions"
+    headers = {
+        'User-Agent': 'github-contrib-chart/1.0 (+https://github.com)'
+    }
+
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
         html = response.text
-        
+
         # Parse contribution counts from the HTML
         contributions = parse_contribution_html(html)
-        return contributions
+        if contributions and any(c is not None for c in contributions):
+            return contributions
+        # If parsing failed, fall through to GraphQL fallback (if token available)
+        print("HTML parse returned no contributions, trying GraphQL fallback...")
     except Exception as e:
-        print(f"Error fetching contributions: {e}")
-        return get_sample_data()
+        print(f"Error fetching contributions HTML: {e}")
+
+    # Fallback: if a GitHub token is provided, use the GraphQL API to fetch exact counts
+    if GITHUB_TOKEN:
+        try:
+            return fetch_contributions_graphql()
+        except Exception as e:
+            print(f"GraphQL fetch failed: {e}")
+
+    # Last resort: return sample data so caller still has something to render
+    return get_sample_data()
 
 def parse_contribution_html(html):
     """Parse contribution data from GitHub's contribution page HTML."""
@@ -34,31 +50,91 @@ def parse_contribution_html(html):
     
     contributions = []
     today = datetime.now()
-    
-    # Look for data-count attributes in the HTML
+
+    # Look for data-date / data-count attributes in the HTML
     import re
-    
-    # Find all contribution data
+
     pattern = r'data-date="([^"]+)"[^>]*data-count="(\d+)"'
     matches = re.findall(pattern, html)
-    
+
+    # Some markup orders attributes differently; try alternative pattern as well
     if not matches:
-        # Alternative pattern
-        pattern = r'data-count="(\d+)"[^>]*data-date="([^"]+)"'
-        matches = re.findall(pattern, html)
-        matches = [(date, count) for count, date in matches]
-    
+        pattern_alt = r'data-count="(\d+)"[^>]*data-date="([^"]+)"'
+        alt_matches = re.findall(pattern_alt, html)
+        # convert to (date, count)
+        matches = [(date, count) for count, date in alt_matches]
+
     if matches:
-        # Get last 28 days
         date_counts = {date: int(count) for date, count in matches}
-        
+        # Build last 28 days (most recent last)
         for i in range(28):
-            date = (today - timedelta(days=27-i)).strftime('%Y-%m-%d')
+            date = (today - timedelta(days=27 - i)).strftime('%Y-%m-%d')
             contributions.append(date_counts.get(date, 0))
     else:
-        contributions = get_sample_data()
-    
+        # If we couldn't parse the HTML, return an empty list so caller can fallback
+        return []
+
     return contributions
+
+
+def fetch_contributions_graphql():
+    """Fetch contributions using GitHub GraphQL API when a token is available.
+    Returns last 28 days of contribution counts.
+    """
+    # Construct date range
+    to_date = datetime.utcnow().date()
+    from_date = to_date - timedelta(days=27)
+
+    url = 'https://api.github.com/graphql'
+    headers = {
+        'Authorization': f'bearer {GITHUB_TOKEN}',
+        'User-Agent': 'github-contrib-chart/1.0'
+    }
+
+    query = '''
+    query($login: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $login) {
+        contributionsCollection(from: $from, to: $to) {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                date
+                contributionCount
+              }
+            }
+          }
+        }
+      }
+    }
+    '''
+
+    variables = {
+        'login': GITHUB_USERNAME,
+        'from': f"{from_date.isoformat()}T00:00:00Z",
+        'to': f"{to_date.isoformat()}T23:59:59Z"
+    }
+
+    resp = requests.post(url, headers=headers, json={'query': query, 'variables': variables}, timeout=10)
+    resp.raise_for_status()
+    data = resp.json()
+
+    # Walk the response to extract dates
+    try:
+        weeks = data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+        day_map = {}
+        for week in weeks:
+            for day in week['contributionDays']:
+                day_map[day['date']] = day['contributionCount']
+
+        contributions = []
+        for i in range(28):
+            date = (from_date + timedelta(days=i)).isoformat()
+            contributions.append(day_map.get(date, 0))
+
+        return contributions
+    except Exception as e:
+        raise RuntimeError(f"Unexpected GraphQL response structure: {e}")
 
 def get_sample_data():
     """Return sample data if fetching fails."""
